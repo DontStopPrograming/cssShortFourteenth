@@ -1,0 +1,114 @@
+
+:root {
+    --fill-color: #1a2b3d;
+    --secondary-color: #3d3d3d;
+    --stroke-color: #789;
+    --white: white;
+    --red: rgb(192, 4, 4);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style:none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.notification {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 9px;
+    border-radius: 3px;
+    background: var(--fill-color);
+}
+
+.notification a {
+    text-decoration: underline;
+}
+
+.menu {
+    text-align: center;
+}
+
+.has-bg {
+    background: var(--stroke-color);
+    padding: 40px 0 60px 0;
+    margin-top: 20px;
+}
+
+.menu li {
+    margin-top: 25px;
+}
+
+.menu a {
+    position: relative;
+    display: inline-block;
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 1.4;
+    overflow: hidden;
+    color: var(--white);
+    -webkit-text-stroke: 1px var(--stroke-color);
+}
+
+.has-bg a {
+    color: var(--secondary-color);
+    -webkit-text-stroke: 0;
+}
+
+.menu .outer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    color: var(--fill-color);
+    transform: translateX(-100%);
+}
+
+.menu .inner {
+    display: inline-block;
+    transform: translateX(100%);
+}
+
+.menu a .outer,
+.menu a .inner {
+    transition: transform 0.15s cubic-bezier(0.29, 0.73, 0.74, 1.02);
+}
+
+.menu a:hover .outer,
+.menu a:hover .inner {
+    transform: none;
+}
+
+[data-animation = 'to left'] .outer {
+    transform: translateX(100%);
+}
+
+[data-animation = 'to left'] .inner {
+    transform: translateX(-100%);
+}
+
+[data-animation = 'to-top'] .outer {
+    transform: translateY(100%);
+}
+
+[data-animation = 'to-top'] .inner {
+    transform: translateY(-100%);
+}
+
+[data-animation = 'to-bottom'] .outer {
+    transform: translateY(-100%);
+}
+
+[data-animation = 'to-bottom'] .inner {
+    transform: translateY(100%);
+}
