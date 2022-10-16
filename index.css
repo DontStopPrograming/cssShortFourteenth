@@ -89,6 +89,14 @@ a {
     transform: none;
 }
 
+[data-animation = 'to-right'] .outer {
+    transform: translateX(100%);
+}
+
+[data-animation = 'to-right'] .inner {
+    transform: translateX(-100%);
+}
+
 [data-animation = 'to left'] .outer {
     transform: translateX(100%);
 }
